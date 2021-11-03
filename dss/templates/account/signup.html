@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>DSS</title>
+</head>
+<body>
+    <div><h1>SIGN UP</h1></div>
+    <form action="{% url "account:Signup" %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        {{text}}
+        <br>
+        <button type="submit">제출하기</button>
+        <br>
+        <a href="{% url 'Index' %}">처음으로</a>
+    </form>
+</body>
+</html>
