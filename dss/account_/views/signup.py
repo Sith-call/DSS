@@ -20,7 +20,7 @@ class Signup(View):
         if form.is_valid() :
             user = User()
             user.id = form.cleaned_data['id']
-            user.name = form.changed_data['name']
+            user.name = form.cleaned_data['name']
             user.email = form.cleaned_data['email']
             user.password = form.cleaned_data['password']
             user_password_check = form.cleaned_data['password_check']

@@ -17,14 +17,24 @@ from django.contrib import admin
 from django.urls import path, include
 from dss.views.index import *
 from dss.views.signin import * 
+from dss.views.menu import * 
 
 app_name='dss'
 
+# for Administrator
 urlpatterns = [
+    path('admin/', admin.site.urls),
+]
+# for dss
+urlpatterns +=[
     path('', Index.as_view(),name='Index'),
     path('/', Index.as_view(),name='Index'),
     path('signin/', Signin.as_view(),name='Signin'),
-    path('admin/', admin.site.urls),
-
+    path('logout/',Logout.as_view(),name='Logout'),
+    path('menu/',Menu.as_view(),name='Menu')
+]
+# for other apps
+urlpatterns +=[
     path('account/',include('account_.urls'),name='account'),
+    path('board/',include('board_.urls'),name='board'),
 ]

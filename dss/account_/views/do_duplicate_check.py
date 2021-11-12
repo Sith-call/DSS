@@ -6,10 +6,10 @@ def do_duplicate_check(request):
     """
     아이디 중복확인
     """
-    user_email = request.POST.get('email')
+    user_id = request.POST.get('id')
     try:
         # 중복 검사 실패
-        _id = User.objects.get(email=user_email)
+        _id = User.objects.get(id=user_id)
         print(_id)
     except:
         # 중복 검사 성공

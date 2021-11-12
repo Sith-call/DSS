@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account_.apps.AccountConfig',
     'board_.apps.BoardConfig',
-    'email_.apps.EmailConfig',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +126,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# expire time
+SESSION_COOKIE_AGE = 10800

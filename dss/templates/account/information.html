@@ -6,14 +6,21 @@
 </head>
 <body>
     <div><h1>INFORMATION</h1></div>
-    {% comment %} {% if question_list %}
+    {% if info_list %}
     <ul>
-    {% for question in question_list %}
-        <li><a href="/pybo/{{ question.id }}/">{{ question.subject }}</a></li>
-    {% endfor %}
+        <li>
+        아이디 : {{ info_id }}
+        </li>
+        <li>
+        이름 : {{ info_name }}
+        </li>
+        <li>
+        이메일 : {{ info_email }}
+        </li>
     </ul>
     {% else %}
-        <p>질문이 없습니다.</p>
-    {% endif %}     {% endcomment %}
+        <p>정보를 불러오는데 실패했습니다.</p>
+    {% endif %}
+    <a href="{% url 'Menu' %}">메뉴</a>
 </body>
 </html>
