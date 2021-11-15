@@ -8,7 +8,7 @@
     <div><h1>MENU</h1></div>
     <div>{{ user_id }}님 환영합니다.</div>
     <ul>
-        <li><a href="#">BOARD</a></li>
+        <li><a href="{% url 'board:Index' %}">BOARD</a></li>
         <li><a href="{% url 'account:Info' %}">ACCOUNT</a></li>
     </ul>
     <a href="{% url 'Logout' %}">로그아웃</a>

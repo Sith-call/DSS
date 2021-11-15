@@ -11,12 +11,12 @@
     <a href="{% url 'board:Index' %}">BOARD</a>
     <br>
     {% if post_id %}
-    <form action="?post_id={{post_id}}" method="post">
+    <form action="{% url 'board:Update' %}?post_id={{ post_id }}" method="post">
         {% csrf_token %}
-        <label>제목 : </label>
+        <label>제목</label>
         <input name="subject" type="text">
-        <p>textarea : <textarea name='content'></textarea></p>
-        <button type="submit">제출하기</button>
+        <p>textarea: <textarea name='content'></textarea></p>
+        <button type="submit">제출</button>
     </form>
     {% else %}
         <p>해당 게시글이 없습니다.</p>

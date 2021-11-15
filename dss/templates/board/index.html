@@ -6,6 +6,18 @@
 </head>
 <body>
     <div><h1>BOARD</h1></div>
-    
+    <a href="{% url 'Menu' %}">메뉴</a>
+    <a href="{% url 'Logout' %}">로그아웃</a>
+    <a href="{% url 'board:Create' %}">글 작성</a>
+    <div><h1>POST LIST</h1></div>
+    {% if post_list %}
+    <ol>
+    {% for post in post_list %}
+        <li><a href="{% url 'board:Read' %}?post_id={{ post.post_id }}">{{ post.subject }}</a></li>
+    {% endfor %}
+    </ol>
+    {% else %}
+        <p>질문이 없습니다.</p>
+    {% endif %}
 </body>
 </html>

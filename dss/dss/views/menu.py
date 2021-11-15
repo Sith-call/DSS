@@ -6,5 +6,6 @@ class Menu(View):
     Index of Site
     """
     def get(self,request):
-        return render(request,'dss/menu.html')
+        user_id = request.session['user_id']
+        return render(request,'dss/menu.html',{'user_id':user_id})
 

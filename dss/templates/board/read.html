@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>DSS</title>
+</head>
+<body>
+    <div><h1>BOARD</h1></div>
+    <a href="{% url 'Menu' %}">메뉴</a>
+    <a href="{% url 'Logout' %}">로그아웃</a>
+    <a href="{% url 'board:Index' %}">BOARD</a>
+    {% if post %}
+    <a href="{% url 'board:Delete'%}?post_id={{post_id}}">삭제</a>
+    <a href="{% url 'board:Update'%}?post_id={{post_id}}">수정</a>
+    <div><h1>POST</h1></div>
+    <div><h2>{{ subject }}</h2></div>
+    <p>{{ content }}</p>
+    {% else %}
+        <p>없는 게시글입니다.</p>
+    {% endif %}
+</body>
+</html>
